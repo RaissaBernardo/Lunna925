@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUNNA</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- logo e nome -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo da LUNNA" class="logo">
+      <h1>LUNNA 925</h1>
+    </div>
+
+    <!-- carrinho fixo -->
+    <button id="botaoCarrinho" onclick="abrirModal()">🛒</button>
+  </header>
+
+  <!-- busca e filtros -->
+  <input type="text" id="busca" placeholder="Buscar produto..." onkeyup="filtrarProdutos()">
+
+  <div class="filtros">
+    <label>Tipo:</label>
+    <select id="filtroTipo" onchange="filtrarProdutos()">
+      <option value="">Todos</option>
+      <option value="pulseira">Pulseiras</option>
+      <option value="anel">Anéis</option>
+      <option value="tornozeleira">Tornozeleiras</option>
+      <option value="bracelete">Braceletes</option>
+      <option value="colar">Colares</option>
+      <option value="infantil">Linha Infantil</option>
+      <option value="conjunto">Conjuntos</option>
+      <option value="brinco">Brincos</option>
+    </select>
+  </div>
+
+  <h2>Produtos</h2>
+  <div class="produtos-container" id="produtos"></div>
+
+  <!-- carrinho -->
+  <div id="modalCarrinho" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <h2>Seu Carrinho</h2>
+      <ul id="carrinho"></ul>
+      <p id="total"></p>
+      <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+  </div>
+
+</body>
+</html>
